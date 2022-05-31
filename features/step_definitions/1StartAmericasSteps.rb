@@ -68,9 +68,16 @@ Then(/^Navigates to "([^"]*)" page$/) do|option|
 end
 
 
-Given(/^I enter my user and password$/) do
-  fill_in 'email', :with => ENV['USERL']
+Given(/^I enter my "([^"]*)" user and password$/) do |arg1|
+  if(arg1 == "volunteer")
+    fill_in 'email', :with => ENV['USERV']
+  elsif(arg1 == "leader")
+    fill_in 'email', :with => ENV['USERL']
+  elsif(arg1 == "coreteam")
+    fill_in 'email', :with => ENV['USERC']
+  end
   fill_in 'password', :with => ENV['PSW']
+  
 end
 
 

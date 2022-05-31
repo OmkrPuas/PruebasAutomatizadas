@@ -23,6 +23,6 @@ Scenario: Register a user on site
 Scenario: Login a user on site        
 	Given I am on the Start Americas homepage
 	And I press the "Iniciar Sesión" button
-	And I enter my user and password
+	And I enter my "leader" user and password
 	When I press the Login button
     Then The loged home page is displayed

@@ -4,13 +4,6 @@ Given(/^I am on the Start Americas loginpage$/) do
     visit ('https://testing-start.web.app/login')
 end
 
-Given(/^I enter an email and password of a volunteer user$/) do
-    fill_in 'email', :with => ENV['USERV']
-    fill_in 'password', :with => ENV['PSW']
-  end
-
-
-
 #When I search for "houston dynamo tickets"
 When(/^I search for "([^"]*)"$/) do |valueToSearch|
     fill_in('q',:with => valueToSearch).native.send_keys(:return)
@@ -75,6 +68,44 @@ Then('for payments the schedule is {string}') do |payingLineSchedule|
 
 end
 
-Then('Ill see a button with the text {string}') do |arg1|
+Then('I will see a button with the text {string}') do |arg1|
     expect(page).to have_content(arg1)
-  end
+end
+
+Then('I will see my profile picture') do
+    find(:xpath ,'/html/body/div[1]/div[2]/div[1]/div/div/div/div[1]/div[1]/span/div/img')
+end
+
+Then('I will see my {string} name') do |arg1|
+    xpath = '/html/body/div[1]/div[2]/div[1]/div/div/div/div[1]/div[2]/div[1]/h6'
+    if(arg1 == "volunteer")
+        name = "Voluntario"
+    elsif(arg1 == "leader")
+        name = "Lider"
+    elsif(arg1 == "coreteam")
+        name = "Core"
+    end
+    expect(page).to have_content(name)
+end
+
+Then('I will see my {string} lastname') do |arg1|
+    xpath = '/html/body/div[1]/div[2]/div[1]/div/div/div/div[1]/div[2]/div[1]/h6'
+    if(arg1 == "volunteer")
+        apellido = "Voluntario"
+    elsif(arg1 == "leader")
+        apellido = "Lider"
+    elsif(arg1 == "coreteam")
+        apellido = "Team"
+    end
+    expect(page).to have_content(apellido)
+end
+
+Then('I will see my state as {string}') do |string|
+    xpath = '/html/body/div[1]/div[2]/div[1]/div/div/div/div[1]/div[1]/span/span'
+    if (string == "Estoy Disponible")
+        clase = ".MuiBadge-colorSecondary"
+    else
+        clase = ".MuiBadge-colorPrimary"
+    end
+    expect(page).to have_css(clase)
+end

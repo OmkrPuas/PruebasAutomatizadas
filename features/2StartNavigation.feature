@@ -7,7 +7,7 @@ Feature: Start Americas Navigation
 Scenario: Navigate to proyectos        
 	Given I am on the Start Americas homepage
 	And I press the "Iniciar Sesión" button
-	And I enter my user and password
+	And I enter my "leader" user and password
 	And I press the Login button
     And The loged home page is displayed
 	When I press the "Proyectos" button
@@ -17,7 +17,7 @@ Scenario: Navigate to proyectos
 Scenario: Navigate to Eventos
 	Given I am on the Start Americas homepage
 	And I press the "Iniciar Sesión" button
-	And I enter my user and password
+	And I enter my "leader" user and password
 	And I press the Login button
     And The loged home page is displayed
 	When I press the "Eventos" button
@@ -28,7 +28,7 @@ Scenario: Navigate to Eventos
 Scenario: Navigate to Cuenta
 	Given I am on the Start Americas homepage
 	And I press the "Iniciar Sesión" button
-	And I enter my user and password
+	And I enter my "leader" user and password
 	And I press the Login button
     And The loged home page is displayed
 	When I press the "Cuenta" button
@@ -39,7 +39,7 @@ Scenario: Navigate to Cuenta
 Scenario: Navigate to Usuarios
 	Given I am on the Start Americas homepage
 	And I press the "Iniciar Sesión" button
-	And I enter my user and password
+	And I enter my "leader" user and password
 	And I press the Login button
     And The loged home page is displayed
 	When I press the "Usuarios" button
