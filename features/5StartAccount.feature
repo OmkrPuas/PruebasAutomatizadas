@@ -19,3 +19,19 @@ Scenario: See the account page of a volunteer users point of view
   And I will see a button with the text "TUS PROYECTOS" 
   And I will see a button with the text "TUS LOGROS" 
   And I will see my profile picture
+
+Scenario: See the events of a volunteer users 
+  Given I press the account icon 
+  When I press the "Tus eventos" button on the table
+  Then I will see a list of my "events"
+
+Scenario: See the events of a volunteer users 
+  Given I press the account icon 
+  When I press the "Tus proyectos" button on the table
+  Then I will see a list of my "proyects"
+
+Scenario: See the events of a volunteer users 
+  Given I press the account icon 
+  When I press the "Tus logros" button on the table
+  Then I will see a list of my "achievements"
+

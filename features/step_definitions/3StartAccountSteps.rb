@@ -4,6 +4,17 @@ Given(/^I am on the Start Americas loginpage$/) do
     visit ('https://testing-start.web.app/login')
 end
 
+When(/^I press the "([^"]*)" button on the table$/) do |arg1|
+    if(arg1 == "Tus eventos")
+        css = '#scrollable-auto-tab-0'
+    elsif (arg1 == "Tus proyectos")
+        css = '#scrollable-auto-tab-1'
+    elsif (arg1 == "Tus logros")
+        css = '#scrollable-auto-tab-2'
+    end 
+    find(:css, css).click
+end
+
 #When I search for "houston dynamo tickets"
 When(/^I search for "([^"]*)"$/) do |valueToSearch|
     fill_in('q',:with => valueToSearch).native.send_keys(:return)
@@ -108,4 +119,28 @@ Then('I will see my state as {string}') do |string|
         clase = ".MuiBadge-colorPrimary"
     end
     expect(page).to have_css(clase)
+end
+
+Then('I will see a list of my {string}') do |string|
+    
+    if (string == "events")
+        css = '#scrollable-auto-tabpane-0'
+    elsif (string == "proyects")
+        css = '#scrollable-auto-tabpane-1'
+    elsif (string == "achievements")
+        css = '#scrollable-auto-tabpane-2'
+    end
+    find(:css, css)
+end
+
+Then('I wont see a list of my {string}') do |string|
+    
+    if (string == "events")
+        css = '#scrollable-auto-tabpane-1'
+    elsif (string == "proyects")
+        css = '#scrollable-auto-tabpane-2'
+    elsif (string == "achievements")
+        css = '#scrollable-auto-tabpane-0'
+    end
+    find(:css, css)
 end
