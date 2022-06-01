@@ -17,6 +17,8 @@ Scenario: Mostrar formulario Crear evento
 	And The "Eventos" page is displayed
 	When I press the Crear Evento button
 	Then The Crear evento form is displayed
+	Then The Guardar Evento botton and cancel are show
+
 
 @crear
 Scenario: Crear Evento
@@ -31,7 +33,10 @@ Scenario: Crear Evento
     |Lider: 	        | Lider Lider      	|
     |Modalidad: 	    | Virtual   		|
     |Lugar:           	| CBBA  |	
-    |Fecha: 	        | 05/05/22        |
+    |Fecha: 	        | 06/07/2022        |
     |Categoria: 	    | Educacion         |
     |Proyecto:  		| Prueba            |
+	Then The Guardar Evento botton and cancel are show
 	Then Press the "GuardarEvento" button
+	
+

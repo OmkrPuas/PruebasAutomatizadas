@@ -144,3 +144,11 @@ Then('I wont see a list of my {string}') do |string|
     end
     find(:css, css)
 end
+
+When('I press a {string} of the list') do |string|
+    
+  end
+  
+Then('I will see the details of the {string}') do |string|
+
+end

@@ -7,7 +7,7 @@ Background: Loged As a volunteer User
 	And I press the "Iniciar Sesión" button
 	And I enter my "volunteer" user and password
 	When I press the Login button
-    Then The loged home page is displayed
+  Then The loged home page is displayed
 
 Scenario: See the account page of a volunteer users point of view  
   Given I press the account icon 
@@ -35,3 +35,9 @@ Scenario: See the events of a volunteer users
   When I press the "Tus logros" button on the table
   Then I will see a list of my "achievements"
 
+@ListEvents
+Scenario: See the events of a volunteer user
+  Given I press the account icon 
+  When I press the "Tus eventos" button on the table
+  And I press a "event" of the list
+  Then I will see the details of the "event"

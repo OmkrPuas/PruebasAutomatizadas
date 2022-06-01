@@ -122,3 +122,14 @@ When(/^I press the Login button$/) do
   xpath = '/html/body/div[1]/div[2]/div[1]/div/div[2]/div[2]/div/form/div/button/span[1]'
   find(:xpath, xpath).click
 end
+
+Then(/^The Guardar Evento botton and cancel are show/) do
+  bottonGuardar = find(:xpath,'//*[@id="ModalFormCrearEvento"]/div/form/div[11]/button[1]').text
+  if (bottonGuardar == 'Guardar Evento')
+       puts "Validation for Crear Evento Form: Passed"
+  else
+    raise "Validation for Crear Evento Form: Failed"    
+    puts "Expected: Guardar Evento Button"
+  
+  end
+end
