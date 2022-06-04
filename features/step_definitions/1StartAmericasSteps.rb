@@ -53,7 +53,7 @@ Then(/^Goes to Login page$/) do
   end
 end
 Then(/^Navigates to "([^"]*)" page$/) do|option|
-  puts option
+
   
   if (option == 'Proyectos')
     visit('https://testing-start.web.app/projects/categories')
@@ -83,7 +83,6 @@ end
 
 
 When(/^I press the "([^"]*)" button$/) do |arg1|
-  puts arg1
   if(arg1 == "Iniciar Sesión")
     xpath = '//*[@id="root"]/div[2]/header/div[1]/div[3]/button/span[1]'
   elsif(arg1 == "Unete a Start")
@@ -104,11 +103,10 @@ end
 
 Then(/^The loged home page is displayed$/) do
     expect(page).to have_content("Tus Próximos Eventos")
-    puts find(:xpath,'//*[@id="root"]/div[2]/div[1]/section/div[1]/div[1]/h2').text
+    #puts find(:xpath,'//*[@id="root"]/div[2]/div[1]/section/div[1]/div[1]/h2').text
 end
 
 Then(/^The "([^"]*)" page is displayed$/) do|arg1|
-  puts arg1
   if(arg1 == "Proyectos")
     expect(page).to have_content("MEDIO AMBIENTE")
   elsif(arg1 == "Eventos")
