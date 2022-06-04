@@ -3,7 +3,7 @@ Feature: Start Americas Navigation
   As a Logged User
   I want to test the navegation options
 
-@Proyec
+@Proyects
 Scenario: Navigate to proyectos        
 	Given I am on the Start Americas homepage
 	And I press the "Iniciar Sesión" button

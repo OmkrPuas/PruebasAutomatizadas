@@ -52,6 +52,17 @@ When(/^Press the "([^"]*)" button of card "([^"]*)"$/) do |buttonName, eventName
     $currentevent=eventName
     sleep(2)
 end
+Then(/^The "([^"]*)" button of card "([^"]*) is show"$/) do |buttonName2, eventName2|
+    namebutton = buttonName2 +"_"+ eventName2
+    xpath='/html/body/div[1]/div[2]/div[1]/div/div[1]/div[2]/div[2]/div/div[2]/div/button[1]'
+    namebuttonChange = find(:xpath, xpath).text
+    if(namebuttonChange == namebutton)
+        puts "Validation for Participar: Passed"
+    else
+        raise "Validation for Registration: Failed"    
+    sleep(2)
+    end
+end
 When(/^Press the "([^"]*)" button$/) do |buttonName|
     if(buttonName == "Confirmar")
         deleteAction="eliminarevento" + $currentevent
@@ -74,26 +85,11 @@ When(/^Press the "([^"]*)" button$/) do |buttonName|
         css=' #ModalFormEditEvento > div > form > div.CamposBotones > button.MuiButtonBase-root.MuiButton-root.MuiButton-text.botonActualizar'
         find(:css, css).click
         sleep(1)
+    
     end
   
 end
 
- 
-Then(/^The "([^"]*)" details is showed$/) do |eventName|
-    currentEvent=eventName
-    find(:xpath, '/html/body/div[1]/div[2]/div[1]/div/div[2]/div/div/div[1]/h4/b', :text => currentEvent)
-    editButton= find(:xpath, '//*[@id="root"]/div[2]/div[1]/div/button/span[1]').text
-    expect(page).to have_content("Lista De Participantes")
-end
-
 When(/^I should see the "([^"]*)" event$/) do |description|
-
-    
-    expect(page).to have_content(description)
-end
-
-Then(/^I should see the event  modified$/) do |eventEdit|
-
-    //*[@id="root"]/div[2]/div[1]/div/div[2]/div/div/div[3]/div/div[2]/div/p[5]/b
     expect(page).to have_content(description)
 end

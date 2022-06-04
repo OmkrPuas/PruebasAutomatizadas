@@ -79,7 +79,12 @@ Scenario Outline: Ver detalle Evento
     | Evento Automatizado    | Descripcion Evento Automatizado |
 	| Evento Automatizado2   | Descripcion Evento Automatizado2 |
 	| Evento Automatizado3   | Descripcion Evento Automatizado3 |
- 
-	
+@ParticiparEvento
+Scenario: Participar en evento
+	Given I press the "Eventos" button
+	And Navigates to "Eventos" page
+	And The "Eventos" page is displayed
+	When Press the "Participar" button of card "Evento Automatizado2" 
+	Then The "Dejar Participar" button of card "Evento Automatizado2" is show"
 
 
