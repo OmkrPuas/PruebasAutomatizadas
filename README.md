@@ -7,13 +7,15 @@ Ruby
 Cucumber
 Capybara
 
-Necesitando la isntalacion de las librerias con los siguientes codigos:
-• gem install cucumber
-• gem install capybara
-• gem install selenium-webdriver
-• gem install selenium
-• gem install rspec
-• gem install capybara-screenshot
+Necesitando la instalacion de las librerias con los siguientes codigos:
+```
+ gem install cucumber
+ gem install capybara
+ gem install selenium-webdriver
+ gem install selenium
+ gem install rspec
+ gem install capybara-screenshot
+```
 
 Y la configuracion de los drivers necesarios para el navegador que se este usando.
 
