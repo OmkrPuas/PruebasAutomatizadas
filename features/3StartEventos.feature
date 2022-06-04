@@ -43,7 +43,7 @@ Scenario: Eliminar evento
 	Given I press the "Eventos" button
 	And Navigates to "Eventos" page
 	And The "Eventos" page is displayed
-	When Press the "Eliminar" button of "Evento Automatico" 
+	When Press the "Eliminar" button of card "Evento Automatico" 
 	Then Press the "Confirmar" button
 	
 @EditarEvento
@@ -63,6 +63,7 @@ Scenario: Editar evento
     |Categoria: 	    | Medio ambiente      |
     |Proyecto:  		| ProyectoPrueba            |
 	Then Press the "Guardar Cambios" button
+	
 @VerDetalleEvento
 Scenario Outline: Ver detalle Evento
 	Given I press the "Eventos" button

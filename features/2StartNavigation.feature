@@ -12,17 +12,17 @@ Scenario: Navigate to proyectos
     And The loged home page is displayed
 	When I press the "Proyectos" button
 	Then Navigates to "Proyectos" page
-	And The "Proyectos" pages is displayed
+	
 @Events
 Scenario: Navigate to Eventos
 	Given I am on the Start Americas homepage
 	And I press the "Iniciar Sesión" button
 	And I enter my "leader" user and password
 	And I press the Login button
-    And The loged home page is displayed
+    When The loged home page is displayed
 	When I press the "Eventos" button
-	Then Navigates to "Eventos" page
-	And The "Eventos" pages is displayed
+	And Navigates to "Eventos" page
+	
 
 @Account
 Scenario: Navigate to Cuenta
@@ -30,10 +30,10 @@ Scenario: Navigate to Cuenta
 	And I press the "Iniciar Sesión" button
 	And I enter my "leader" user and password
 	And I press the Login button
-    And The loged home page is displayed
-	When I press the "Cuenta" button
-	Then Navigates to "Cuenta" page
-	And The "Cuenta" pages is displayed
+    When The loged home page is displayed
+	Then I press the "Cuenta" button
+	And Navigates to "Cuenta" page
+	
 
 @Users
 Scenario: Navigate to Usuarios
@@ -41,7 +41,6 @@ Scenario: Navigate to Usuarios
 	And I press the "Iniciar Sesión" button
 	And I enter my "leader" user and password
 	And I press the Login button
-    And The loged home page is displayed
-	When I press the "Usuarios" button
-	Then Navigates to "Usuarios" page
-	And The "Usuarios" pages is displayed
+    When The loged home page is displayed
+	Then I press the "Usuarios" button
+	And Navigates to "Usuarios" page
