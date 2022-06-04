@@ -18,6 +18,8 @@ Scenario: Mostrar formulario Crear evento
 	When I press the Crear Evento button
 	Then The "Crear evento" form is displayed
 
+
+
 @CrearEvento
 Scenario: Crear Evento
 	Given I press the "Eventos" button
@@ -35,8 +37,7 @@ Scenario: Crear Evento
     |Categoria: 	    | Educacion         |
     |Proyecto:  		| ProyectoPrueba            |
 	Then Press the "Guardar Evento" button
-	
-	
+
 @EliminarEvento
 Scenario: Eliminar evento
 	Given I press the "Eventos" button
@@ -79,4 +80,12 @@ Scenario Outline: Ver detalle Evento
     | Evento Automatizado    | Descripcion Evento Automatizado |
 	| Evento Automatizado2   | Descripcion Evento Automatizado2 |
 	| Evento Automatizado3   | Descripcion Evento Automatizado3 |
-    
+ 
+    |Fecha: 	        | 06/07/2022        |
+    |Categoria: 	    | Educacion         |
+    |Proyecto:  		| Prueba            |
+	Then The Guardar Evento botton and cancel are show
+	Then Press the "GuardarEvento" button
+	
+
+
