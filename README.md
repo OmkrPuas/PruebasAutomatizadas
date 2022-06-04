@@ -20,7 +20,7 @@ Y la configuracion de los drivers necesarios para el navegador que se este usand
 El codigo de los pasos usados para las pruebas estan escritas en Ruby, y los test automatizados usan Cucumber y Capybara.
 
 Para la ejecucion de los test se usa el siguiente comando, teniendo que modificar el nombre del archivo a probar:
-
+```
 cucumber features/7StartAccountC.feature --publish-quiet
-
+```
 Dentro de este repositorio, hay 60 escenarios probados en total, de los cuales 11 no estan completos, y 9 escenarios fallan. 
