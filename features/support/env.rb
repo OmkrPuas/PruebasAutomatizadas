@@ -4,7 +4,7 @@ require 'capybara/dsl'
 require 'capybara/cucumber'
 require 'capybara-screenshot/cucumber'
 #StarAmericas Settings
-ENV['USERV']="voluntario@gmail.com"#Rol Voluntario+
+ENV['USERV']="voluntario@gmail.com"#Rol Voluntario
 ENV['USERL']="lider@gmail.com"#Rol Lider
 ENV['USERC']="coreteam@gmail.com"#Rol Coreteam
 ENV['PSW']="123456"
