@@ -50,17 +50,17 @@ When(/^Press the "([^"]*)" button of card "([^"]*)"$/) do |buttonName, eventName
     action=buttonName +"_"+ eventName
     click_button(action)
     $currentevent=eventName
-    sleep(2)
+    sleep(1)
 end
-Then(/^The "([^"]*)" button of card "([^"]*) is show"$/) do |buttonName2, eventName2|
-    namebutton = buttonName2 +"_"+ eventName2
-    xpath='/html/body/div[1]/div[2]/div[1]/div/div[1]/div[2]/div[2]/div/div[2]/div/button[1]'
-    namebuttonChange = find(:xpath, xpath).text
-    if(namebuttonChange == namebutton)
+When(/^The "([^"]*)" button of card "([^"]*)" is show$/) do |buttonName, eventName|
+    namebuttonPage = (buttonName +"_"+ eventName)
+    click_button(namebuttonPage)
+    sleep(1)
+    if(buttonName == "DejarParticipar")
         puts "Validation for Participar: Passed"
     else
-        raise "Validation for Registration: Failed"    
-    sleep(2)
+        raise "Validation for Participar: Failed"    
+    sleep(1)
     end
 end
 When(/^Press the "([^"]*)" button$/) do |buttonName|
@@ -90,6 +90,6 @@ When(/^Press the "([^"]*)" button$/) do |buttonName|
   
 end
 
-When(/^I should see the "([^"]*)" event$/) do |description|
-    expect(page).to have_content(description)
+When(/^I should see the "([^"]*)" event$/) do |content|
+    expect(page).to have_content(content)
 end

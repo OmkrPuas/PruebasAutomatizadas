@@ -10,7 +10,8 @@ Background: Loged As a Lider User
     Then The loged home page is displayed
 	
 
-@ShowForm
+
+@CreateEventos
 Scenario: Mostrar formulario Crear evento
 	Given I press the "Eventos" button
 	And Navigates to "Eventos" page
@@ -18,9 +19,6 @@ Scenario: Mostrar formulario Crear evento
 	When I press the Crear Evento button
 	Then The "Crear evento" form is displayed
 
-
-
-@CrearEvento
 Scenario: Crear Evento
 	Given I press the "Eventos" button
 	And Navigates to "Eventos" page
@@ -28,8 +26,8 @@ Scenario: Crear Evento
 	And Press the "Crear Evento" button
 	And The "Crear evento" form is displayed
 	When I enter the required event fields as show below
-	|Nombre Evento: 	| Evento Automatizado3 |
-    |Descripcion: 	    | Descripcion Evento Automatizado3|
+	|Nombre Evento: 	| Evento Automatizado |
+    |Descripcion: 	    | Descripcion Evento Automatizado|
     |Lider: 	        | Lider Lider       |
     |Modalidad: 	    | Virtual   		|
     |Lugar:           	| CBBA  |	
@@ -38,50 +36,58 @@ Scenario: Crear Evento
     |Proyecto:  		| ProyectoPrueba            |
 	Then Press the "Guardar Evento" button
 
-@EliminarEvento
-Scenario: Eliminar evento
-	Given I press the "Eventos" button
-	And Navigates to "Eventos" page
-	And The "Eventos" page is displayed
-	When Press the "Eliminar" button of card "Evento Automatico" 
-	Then Press the "Confirmar" button
-	
-@EditarEvento
-Scenario: Editar evento
-	Given I press the "Eventos" button
-	And Navigates to "Eventos" page
-	And The "Eventos" page is displayed
-	When Press the "Detalles" button of card "Evento Automatizado" 
-	And Press the "Editar" button
-	And The "Editar evento" form is displayed
-	And I enter the required event fields as show below
-	|Nombre Evento: 	| Evento Automatizado editado |
-    |Descripcion: 	    | Descripcion Evento editado|
-    |Lider: 	        | Inge Soft      |
-    |Lugar:           	| LA Paz  |	
-    |Fecha: 	        | 11/07/2023        |
-    |Categoria: 	    | Medio ambiente      |
-    |Proyecto:  		| ProyectoPrueba            |
-	Then Press the "Guardar Cambios" button
-	
-@VerDetalleEvento
+
+
 Scenario Outline: Ver detalle Evento
 	Given I press the "Eventos" button
 	And Navigates to "Eventos" page
 	When The "Eventos" page is displayed
 	And Press the "Detalles" button of card "<evento>"
 	Then I should see the "<description>" event
+	Then I should see the "<modalidad>" event
+	Then I should see the "<lugar>" event
+
 	Examples:
-    | evento               | description    | 
-    | Evento Automatizado    | Descripcion Evento Automatizado |
-	| Evento Automatizado2   | Descripcion Evento Automatizado2 |
-	| Evento Automatizado3   | Descripcion Evento Automatizado3 |
+    | evento               	 | description    					| modalidad |lugar		|
+    | Evento Automatizado2    | Descripcion Evento Automatizado2  |  Virtual	|LPZ |
+	
+
 @ParticiparEvento
 Scenario: Participar en evento
 	Given I press the "Eventos" button
 	And Navigates to "Eventos" page
 	And The "Eventos" page is displayed
-	When Press the "Participar" button of card "Evento Automatizado2" 
-	
+	When Press the "participar" button of card "Evento Automatizado2" 
+	Then The "DejarParticipar" button of card "Evento Automatizado2" is show
 
+@EditarEvento
+Scenario: Editar evento
+	Given I press the "Eventos" button
+	And Navigates to "Eventos" page
+	And The "Eventos" page is displayed
+	And Press the "Detalles" button of card "Evento Automatizado2" 
+	When Press the "Editar" button
+	And The "Editar evento" form is displayed
+	And I enter the required event fields as show below
+	|Nombre Evento: 	| Evento Automatizado editado |
+    |Descripcion: 	    | Descripcion Evento editado|
+    |Lider: 	        | Inge Soft      |
+    |Lugar:           	| La Paz  |	
+    |Fecha: 	        | 11/07/2023        |
+    |Categoria: 	    | Medio ambiente      |
+    |Proyecto:  		| ProyectoPrueba            |
+	Then Press the "Guardar Cambios" button
+	And I should see the "<description>" event
+	And I should see the "<lugar>" event
+	And I should see the "<categoria>" event
+	Examples:
+    | evento               	 	   | description    			 | lugar 	|categoria		|
+    | Evento Automatizado editado  | Descripcion Evento editado  |  La Paz	|Medio ambiente|
 
+@EliminarEvento
+Scenario: Eliminar evento
+	Given I press the "Eventos" button
+	And Navigates to "Eventos" page
+	And The "Eventos" page is displayed
+	When Press the "Eliminar" button of card "Evento Automatizado editado" 
+	Then Press the "Confirmar" button
