@@ -63,10 +63,6 @@ Scenario: Editar evento
     |Categoria: 	    | Medio ambiente      |
     |Proyecto:  		| ProyectoPrueba            |
 	Then Press the "Guardar Cambios" button
-	Then I should see the event modified fields
-	|Nombre Evento: 	| Evento Automatizado editado |
-    |Descripcion: 	    | Descripcion Evento editado|
-    |Lider: 	        | Inge Soft      |
 @VerDetalleEvento
 Scenario Outline: Ver detalle Evento
 	Given I press the "Eventos" button
@@ -85,6 +81,6 @@ Scenario: Participar en evento
 	And Navigates to "Eventos" page
 	And The "Eventos" page is displayed
 	When Press the "Participar" button of card "Evento Automatizado2" 
-	Then The "Dejar Participar" button of card "Evento Automatizado2" is show"
+	
 
 
