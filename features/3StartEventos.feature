@@ -74,18 +74,12 @@ Scenario Outline: Ver detalle Evento
 	When The "Eventos" page is displayed
 	And Press the "Detalles" button of card "<evento>"
 	Then I should see the "<description>" event
-
 	Examples:
     | evento               | description    | 
     | Evento Automatizado    | Descripcion Evento Automatizado |
 	| Evento Automatizado2   | Descripcion Evento Automatizado2 |
 	| Evento Automatizado3   | Descripcion Evento Automatizado3 |
  
-    |Fecha: 	        | 06/07/2022        |
-    |Categoria: 	    | Educacion         |
-    |Proyecto:  		| Prueba            |
-	Then The Guardar Evento botton and cancel are show
-	Then Press the "GuardarEvento" button
 	
 
 
