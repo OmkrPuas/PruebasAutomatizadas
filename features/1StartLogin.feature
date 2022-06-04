@@ -1,10 +1,10 @@
-Feature: Start Americas Login
+Feature: Login as User
   In order to SignIn
-  As a registered Voluntier
+  As a registered user
   I want to test the login option
 
 @Reg
-Scenario: Register a user on site        
+Scenario: Register a volunteer on site        
 	Given I am on the Start Americas homepage
 	And I press the "Unete a Start" button
 	When I enter the required fields as show below
