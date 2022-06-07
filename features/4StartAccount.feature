@@ -67,7 +67,7 @@ Scenario: See the edit profile tool
   And I will see a button with the text "GUARDAR CAMBIOS"
   And I will see a button with the text "Deseo eliminar mi cuenta"
 
-Scenario: See an alert when try to edit profile with wrong values
+Scenario: Edit the profile
   When I press the edit button
   And I enter the required fields to edit the profile as show below
 	  |Fecha de Nacimiento: 	             | 1251990                 |
@@ -82,5 +82,6 @@ Scenario: See an alert when try to edit profile with wrong values
     |Descripcion Personal:               | Hola soy un nuevo usuario |
   And I save the changes
   Then I will see an alert with the text "Se Actualizo Correctamente!"
+
   
     

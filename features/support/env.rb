@@ -9,7 +9,6 @@ ENV['USERL']="lider@gmail.com"#Rol Lider
 ENV['USERC']="coreteam@gmail.com"#Rol Coreteam
 ENV['PSW']="123456"
 
-
 Capybara.default_driver = :selenium
 
 # Set the host the Capybara tests should be run against
@@ -27,11 +26,8 @@ class CapybaraDriverRegistrar
       Capybara::Selenium::Driver.new(app, :browser => browser)
     end
   end
-
 end
 # Register various Selenium drivers
-#CapybaraDriverRegistrar.register_selenium_driver(:internet_explorer)
-#CapybaraDriverRegistrar.register_selenium_driver(:firefox)
 CapybaraDriverRegistrar.register_selenium_driver(:chrome)
 Capybara.run_server = false
 #World(Capybara)
