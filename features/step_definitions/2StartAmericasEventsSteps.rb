@@ -3,15 +3,15 @@ $events = -1
 $currentevent
 $request = -1
 
-When(/^I should see the "([^"]*)" content$/) do |content|
+Then(/^I should see the "([^"]*)" content$/) do |content|
     $events = EventsPage.new(page)
-    request = $events.exist_the_content(content)
+    request = $events.existing_content(content)
     expect(request).to be true
 end
 
-When(/^I press the Crear Evento button$/) do 
+Then(/^I press the Crear Evento button$/) do 
     $events = EventsPage.new(page)
-    request = $events.push_CrearEvento()
+    request = $events.push_crear_evento()
 end
 Then(/^The "([^"]*)" form shows the tittle form$/) do |optionform|
     puts optionform
