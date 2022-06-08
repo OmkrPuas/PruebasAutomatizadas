@@ -6,8 +6,8 @@ Background: Loged As a Lider User
 	Given I am on the Start Americas homepage
 	And I press the "Iniciar Sesión" button
 	And I enter my "leader" user and password
-	When I press the Login button
-    Then The home page shows Tus proximos eventos
+	And I press the Login button
+    And The home page shows Tus proximos eventos
 	
 
 
