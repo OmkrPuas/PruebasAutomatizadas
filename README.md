@@ -2,7 +2,6 @@
 Pruebas automatizadas para la pagina de prueba de Start Americas Togheter, la cual se encuentra deployada en la [pagina de testing de start americas together](https://testing-start.web.app/)
 
 ### Software utilizado
-
 Para el presente proyecto se requiere tener instalado el lenguaje ruby en su ultima version estable
 - Ruby (version 3.1.2)
 
