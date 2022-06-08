@@ -8,6 +8,7 @@ Background: Login as voluntario
 	And I press the "Iniciar Sesión" button
 	And I enter my "volunteer" user and password
 	When I press the Login button
+   Then The "home" page is displayed
 
 Scenario: See the the active projects list
     When I press the "Proyectos" button 

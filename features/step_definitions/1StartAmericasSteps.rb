@@ -101,6 +101,9 @@ Then(/^The "([^"]*)" page is displayed$/) do|arg1|
   elsif(arg1 == "Cuenta")
     expect(page).to have_content("Estoy disponible")
   end
+elsif(arg1 == "home")
+  expect(page).to have_content("Tus Próximos Eventos")
+end
 end
 
 When(/^I press the Login button$/) do

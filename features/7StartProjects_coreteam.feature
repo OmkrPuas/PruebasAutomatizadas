@@ -8,7 +8,7 @@ Background: Login as coreteam
 	And I press the "Iniciar Sesión" button
 	And I enter my "coreteam" user and password
 	When I press the Login button
- 
+    Then The "home" page is displayed
 
 Scenario: Show the project form
     When I press the "Proyectos" button 
