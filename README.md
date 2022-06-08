@@ -3,9 +3,9 @@ Pruebas automatizadas para la pagina de prueba de Start Americas Togheter
 
 Para las pruebas se usaron las librerias:
 
-Ruby (version 3.1.2)
-Cucumber
-Capybara
+- Ruby (version 3.1.2)
+- Cucumber
+- Capybara
 
 Necesitando la instalacion de las librerias con los siguientes codigos:
 ```
@@ -17,8 +17,7 @@ Necesitando la instalacion de las librerias con los siguientes codigos:
  gem install capybara-screenshot
 ```
 
-Y la configuracion de los drivers necesarios para el navegador de google chrome, con el cual se realizo el presente framework. El driver de chromedriver peude descargarse del siguiente enlace: 
-https://chromedriver.chromium.org/
+Y la configuracion de los drivers necesarios para el navegador de google chrome, con el cual se realizo el presente framework. El driver de chromedriver peude descargarse del: [siguiente enlace]([https://pages.github.com/](https://chromedriver.chromium.org/)
 
 El codigo de los pasos usados para las pruebas estan escritas en Ruby, y los test automatizados usan Cucumber y Capybara.
 
