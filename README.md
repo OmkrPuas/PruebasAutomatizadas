@@ -19,7 +19,7 @@ Para instalar dichas gemas pueden utilizarse los siguientes comandos:
  gem install capybara-screenshot
 ```
 
-Y la configuracion de los drivers necesarios para el navegador de google chrome, con el cual se realizo el presente framework. El driver de chromedriver peude descargarse del [siguiente enlace](https://chromedriver.chromium.org/)
+Y la configuracion de los drivers necesarios para el navegador de google chrome, con el cual se realizo el presente framework. El driver de chromedriver puede descargarse del [siguiente enlace](https://chromedriver.chromium.org/)
 
 El codigo de los pasos usados para las pruebas estan escritas en Ruby, y los test automatizados usan Cucumber y Capybara.
 
