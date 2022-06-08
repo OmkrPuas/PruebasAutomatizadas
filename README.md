@@ -1,7 +1,7 @@
 # PruebasAutomatizadas
 Pruebas automatizadas para la pagina de prueba de Start Americas Togheter, la cual se encuentra deployada en la [pagina de testing de start americas together](https://testing-start.web.app/)
 
-### Software utilizado
+## Software utilizado
 Para el presente proyecto se requiere tener instalado el lenguaje ruby en su ultima version estable
 - Ruby (version 3.1.2)
 
@@ -22,7 +22,7 @@ Para instalar dichas gemas pueden utilizarse los siguientes comandos:
 
 Y la configuracion de los drivers necesarios para el navegador de google chrome, con el cual se realizo el presente framework. El driver de chromedriver puede descargarse del [siguiente enlace](https://chromedriver.chromium.org/)
 
-### Ejecucion del framework
+## Ejecucion del framework
 
 El codigo de los pasos usados para las pruebas estan escritas en Ruby, y los test automatizados usan Cucumber y Capybara.
 
