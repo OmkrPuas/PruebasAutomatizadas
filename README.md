@@ -1,13 +1,15 @@
 # PruebasAutomatizadas
 Pruebas automatizadas para la pagina de prueba de Start Americas Togheter
 
-Para las pruebas se usaron las librerias:
-
+Para el presente proyecto se requiere tener instalado el lenguaje ruby en su ultima version estable
 - Ruby (version 3.1.2)
+
+Para las pruebas se usaron las gemas:
 - Cucumber
 - Capybara
+- Selenium
 
-Necesitando la instalacion de las librerias con los siguientes codigos:
+Para instalar dichas gemas pueden utilizarse los siguientes comandos:
 ```
  gem install cucumber
  gem install capybara
