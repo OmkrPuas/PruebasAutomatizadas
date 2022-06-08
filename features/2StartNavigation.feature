@@ -8,7 +8,7 @@ Background: Loged As a Lider User
 	And I press the "Iniciar Sesión" button
 	And I enter my "leader" user and password
 	When I press the Login button
-    Then The loged home page is displayed
+    Then The home page shows Tus proximos eventos
 
 @Proyects
 Scenario: Navigate to proyectos        

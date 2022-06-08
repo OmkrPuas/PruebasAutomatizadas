@@ -41,17 +41,7 @@ Then(/^the denegation alert is show$/) do
   expect(page).to have_content(alert)
   
 end
-Then(/^Goes to Login page$/) do
-  labelText = find(:xpath,'//*[@id="root"]/div[2]/div[1]/div/div/div[2]/div[1]/h2').text
-  if (labelText == 'Crea Tu Cuenta')
-    puts "Validation for Registration: Passed"
-  else
-    raise "Validation for Registration: Failed"    
-    puts "Expected: Login Page"
-    puts "Actual: Register Page"
-  
-  end
-end
+
 Then(/^Navigates to "([^"]*)" page$/) do|option|
 
   
@@ -80,8 +70,6 @@ Given(/^I enter my "([^"]*)" user and password$/) do |arg1|
   
 end
 
-
-
 When(/^I press the "([^"]*)" button$/) do |arg1|
   if(arg1 == "Iniciar Sesión")
     xpath = '//*[@id="root"]/div[2]/header/div[1]/div[3]/button/span[1]'
@@ -101,9 +89,8 @@ When(/^I press the "([^"]*)" button$/) do |arg1|
 end
 
 
-Then(/^The loged home page is displayed$/) do
+Then(/^The home page shows Tus proximos eventos$/) do
     expect(page).to have_content("Tus Próximos Eventos")
-    #puts find(:xpath,'//*[@id="root"]/div[2]/div[1]/section/div[1]/div[1]/h2').text
 end
 
 Then(/^The "([^"]*)" page is displayed$/) do|arg1|

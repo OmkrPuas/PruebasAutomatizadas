@@ -7,7 +7,7 @@ Background: Loged As a Lider User
 	And I press the "Iniciar Sesión" button
 	And I enter my "leader" user and password
 	When I press the Login button
-    Then The loged home page is displayed
+    Then The home page shows Tus proximos eventos
 	
 
 
@@ -17,14 +17,14 @@ Scenario: Mostrar formulario Crear evento
 	And Navigates to "Eventos" page
 	And The "Eventos" page is displayed
 	Then I press the Crear Evento button
-	And The "Crear evento" form is displayed
+	And The "Crear evento" form shows the tittle form
 
 Scenario: Crear Evento
 	When I press the "Eventos" button
 	And Navigates to "Eventos" page
 	And The "Eventos" page is displayed
 	And Press the "Crear Evento" button
-	And The "Crear evento" form is displayed
+	And The "Crear evento" form shows the tittle form
 	Then  I enter the required event fields as show below
 	|Nombre Evento: 	| Evento Automatizado |
     |Descripcion: 	    | Descripcion Evento Automatizado|
@@ -77,7 +77,7 @@ Scenario: Editar evento
 	And The "Eventos" page is displayed
 	And Press the "Detalles" button of card "Evento Automatizado2" 
 	Then Press the "Editar" button
-	And The "Editar evento" form is displayed
+	And The "Editar evento" form shows the tittle form
 	And I enter the required event fields as show below
 	|Nombre Evento: 	| Evento Automatizado editado |
     |Descripcion: 	    | Descripcion Evento editado|

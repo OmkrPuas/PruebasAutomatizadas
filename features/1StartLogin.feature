@@ -14,8 +14,8 @@ Scenario: Register a volunteer on site
     |Email: 	        | pepe@pepazo.com    |
     |Password:          | PepeStart1         | 
     |Confirm Password:  | PepeStart1         |
-	And send my registration form
-	Then Goes to Login page
+	Then send my registration form
+	
 
 
 
