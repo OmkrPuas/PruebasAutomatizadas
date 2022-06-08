@@ -2,14 +2,14 @@ Feature: As any user
          I want to use the Start Americas togheter page
          and see the account features
 
-Background: Loged As a volunteer User
+Background: Loged As a leader User
 	Given I am on the Start Americas homepage
 	And I press the "Iniciar Sesión" button
 	And I enter my "leader" user and password
 	And I press the Login button
   And I press the account icon
 
-Scenario: See the events of a volunteer users 
+Scenario: See the events of a leader users 
   When I press the "Tus logros" button on the table
   Then I will see a list of my "achievements"
 

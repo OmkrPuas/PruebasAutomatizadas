@@ -9,8 +9,6 @@ Background: Loged As a Lider User
 	And I press the Login button
     And The home page shows Tus proximos eventos
 	
-
-
 @CreateEventos
 Scenario: Mostrar formulario Crear evento
 	When I press the "Eventos" button

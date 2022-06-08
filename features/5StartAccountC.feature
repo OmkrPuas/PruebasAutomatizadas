@@ -9,29 +9,15 @@ Background: Loged As a CoreTeam User
 	When I press the Login button
   And I press the account icon
 
-#Test de navegacion
-
-Scenario: See the account page of a coreteam users point of view  
-  Then I will see my state as "Estoy Disponible"
-  And I will see my "coreteam" name 
-  And I will see my "coreteam" lastname 
-  And I will see a button with the text "Editar Perfil"
-  And I will see a button with the text "TUS EVENTOS"
-  And I will see a button with the text "TUS PROYECTOS" 
-  And I will see a button with the text "TUS LOGROS" 
-  And I will see my profile picture
-
 Scenario: See the events of a coreteam users 
   When I press the "Tus eventos" button on the table
   Then I will see a list of my "events"
 
-Scenario: See the events of a coreteam users 
+Scenario: See the proyects of a coreteam users 
   When I press the "Tus proyectos" button on the table
   Then I will see a list of my "proyects"
 
-Scenario: See the events of a coreteam users 
-  When I press the "Tus logros" button on the table
-  Then I will see a list of my "achievements"
+
 
 #Testing state of user
 
@@ -40,12 +26,6 @@ Scenario: See the change of the state to not available
   When I change the state of the user
   Then I see the text of the state change to "No disponible"
   And I see the circle next to profiles image change to blue
-
-@TestingNotAvailableC
-Scenario: See the change of the state to available
-  When I change the state of the user
-  Then I see the text of the state change to "Estoy disponible"
-  And I see the circle next to profiles image change to green
 
 #Test para ver mas detalles
 
@@ -60,12 +40,6 @@ Scenario: See the proyects of a coreteam user
   Then I will see the details of the "proyect"
 
 #Test para Editar
-
-Scenario: See the edit profile tool
-  When I press the edit button
-  Then I will see a table to edit the profile
-  And I will see a button with the text "GUARDAR CAMBIOS"
-  And I will see a button with the text "Deseo eliminar mi cuenta"
 
 Scenario: See an alert when try to edit profile with wrong values
   When I press the edit button

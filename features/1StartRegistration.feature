@@ -1,7 +1,7 @@
-Feature: Login as User
-  In order to SignIn
-  As a registered user
-  I want to test the login option
+Feature: Register as new user
+  In order to Register
+  As new user
+  I want to test the register option
 
 @Reg
 Scenario: Register a volunteer on site        
@@ -16,6 +16,5 @@ Scenario: Register a volunteer on site
     |Confirm Password:  | PepeStart1         |
 	Then send my registration form
 	
-
 
 

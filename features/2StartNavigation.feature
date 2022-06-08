@@ -32,17 +32,21 @@ Scenario: Navigate to Eventos
 	When I press the "Eventos" button
 	Then Navigates to "Eventos" page
 	And I should see the "<Eventos>" content
+
 Examples:
     | Eventos    |			  
    	| EVENTOS VIGENTES   |
+
 @Account
 Scenario: Navigate to Cuenta
 	When I press the "Cuenta" button
 	Then Navigates to "Cuenta" page
 	And I should see the "<Cuenta>" content
+
 Examples:
     | Cuenta    |			  
    	| lider  |
+
 @Users
 Scenario: Navigate to Usuarios
 	When I press the "Usuarios" button
