@@ -23,8 +23,8 @@ Scenario: Create a project with a start date and a end date later than the actua
     |Fecha de fin: 	    | 01/12/2025      |
     |Nombre del proyecto: | Prueba 1 - 6      	|
     |Descripcion: 	    | Prueba 1 - 6   		|
-    And Press the "crearProyecto1" button
-    Then I press the MEDIO AMBIENTE button
+    And I press the "CREAR PROYECTO" project button
+    Then I press the "MEDIO AMBIENTE" project button
     And I should not see the project "Prueba 1 - 6" in the list of projects
 
 Scenario: Create a project with a start date and a end date later than the actual date where the end date is after the start date
@@ -35,8 +35,8 @@ Scenario: Create a project with a start date and a end date later than the actua
     |Fecha de fin: 	    | 05/12/2025      |
     |Nombre del proyecto: | Prueba 2 - 6      	|
     |Descripcion: 	    | Prueba 2 - 6   		|
-    And Press the "crearProyecto1" button
-    Then I press the MEDIO AMBIENTE button
+     And I press the "CREAR PROYECTO" project button
+    Then I press the "MEDIO AMBIENTE" project button
     And I should not see the project "Prueba 2 - 6" in the list of projects
 
 
@@ -48,8 +48,8 @@ Scenario: Create a project with a start date and a end date earlier than the act
     |Fecha de fin: 	    | 01/01/2022      |
     |Nombre del proyecto: | Prueba 3 - 6      	|
     |Descripcion: 	    | Prueba 3 - 6   		|
-    And Press the "crearProyecto1" button
-    Then I press the MEDIO AMBIENTE button
+    And I press the "CREAR PROYECTO" project button
+    Then I press the "MEDIO AMBIENTE" project button
     And I should not see the project "Prueba 3 - 6" in the list of projects
 
 
@@ -61,8 +61,8 @@ Scenario: Create a project with a start date and a end date earlier than the act
     |Fecha de fin: 	    | 05/01/2022      |
     |Nombre del proyecto: | Prueba 4 - 6      	|
     |Descripcion: 	    | Prueba 4 - 6   		|
-    And Press the "crearProyecto1" button
-    Then I press the MEDIO AMBIENTE button
+    And I press the "CREAR PROYECTO" project button
+    Then I press the "MEDIO AMBIENTE" project button
     And I should see the project "Prueba 4 - 6" in the list of projects
 
 
@@ -74,8 +74,8 @@ Scenario: Create a project with a end date later than the actual date and the st
     |Fecha de fin: 	    | 01/12/2022      |
     |Nombre del proyecto: | Prueba 5 - 6      	|
     |Descripcion: 	    | Prueba 5 - 6   		|
-    And Press the "crearProyecto1" button
-    Then I press the MEDIO AMBIENTE button
+    And I press the "CREAR PROYECTO" project button
+    Then I press the "MEDIO AMBIENTE" project button
     And I should see the project "Prueba 5 - 6" in the list of projects
 
 
@@ -87,6 +87,6 @@ Scenario: Create a project with a end date earlier than the actual date and the 
     |Fecha de fin: 	    | 01/12/2025      |
     |Nombre del proyecto: | Prueba 6 - 6      	|
     |Descripcion: 	    | Prueba 6 - 6   		|
-    And Press the "crearProyecto1" button
-    Then I press the MEDIO AMBIENTE button
+    And I press the "CREAR PROYECTO" project button
+    Then I press the "MEDIO AMBIENTE" project button
     And I should not see the project "Prueba 6 - 6" in the list of projects

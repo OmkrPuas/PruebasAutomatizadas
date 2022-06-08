@@ -20,3 +20,7 @@ Scenario: See the the past projects list
     When I press the "Proyectos" button 
     And I press the MEDIO AMBIENTE button
     Then I should be able to see the active projects list
+
+
+Scenario: Participate in a project
+    # When I press the 

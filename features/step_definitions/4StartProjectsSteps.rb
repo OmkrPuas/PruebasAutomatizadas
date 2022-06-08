@@ -33,6 +33,22 @@ When(/^I fill the fields of the project form with the following data$/) do |tabl
 end
 
 
+When(/^I press the "([^"]*)" project button$/) do |buttonName|
+    if(buttonName == "CREAR PROYECTO")
+        xpath = find('form')
+        xpath.click_button("crearProyecto1")
+        # xpath='/html/body/div[2]/div[3]/form/div[2]/div[11]'
+        # find(:xpath, xpath).click
+        sleep(1)
+    elsif (buttonName == "MEDIO AMBIENTE")
+        xpath='//*[@id="root"]/div[2]/div[1]/div/div[2]/div/div[1]/div'
+        find(:xpath, xpath).click
+        sleep(1) 
+    end
+  
+end
+
+
 Then('I should not see the project {string} in the list of projects') do |string|
     sleep 2
     expect(page).not_to have_content(string)
@@ -45,7 +61,7 @@ Then('I should not see the project {string} in the list of projects') do |string
 
 Then('I press the MEDIO AMBIENTE button') do
     sleep 2 
-    xpath = '/html/body/div/div[2]/div[1]/div/div[2]/div/div[1]'
+    xpath = '//*[@id="root"]/div[2]/div[1]/div/div[2]/div/div[1]/div/div/a/button'
     find(:xpath, xpath).click
 end
 
