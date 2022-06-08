@@ -13,19 +13,19 @@ Background: Loged As a Lider User
 
 @CreateEventos
 Scenario: Mostrar formulario Crear evento
-	Given I press the "Eventos" button
+	When I press the "Eventos" button
 	And Navigates to "Eventos" page
 	And The "Eventos" page is displayed
-	When I press the Crear Evento button
-	Then The "Crear evento" form is displayed
+	Then I press the Crear Evento button
+	And The "Crear evento" form is displayed
 
 Scenario: Crear Evento
-	Given I press the "Eventos" button
+	When I press the "Eventos" button
 	And Navigates to "Eventos" page
 	And The "Eventos" page is displayed
 	And Press the "Crear Evento" button
 	And The "Crear evento" form is displayed
-	When I enter the required event fields as show below
+	Then  I enter the required event fields as show below
 	|Nombre Evento: 	| Evento Automatizado |
     |Descripcion: 	    | Descripcion Evento Automatizado|
     |Lider: 	        | Lider Lider       |
@@ -34,18 +34,28 @@ Scenario: Crear Evento
     |Fecha: 	        | 10/06/2022        |
     |Categoria: 	    | Educacion         |
     |Proyecto:  		| ProyectoPrueba            |
-	Then Press the "Guardar Evento" button
+	And Press the "Guardar Evento" button
 
+@VerEventosPasados
+Scenario: Ver Eventos pasados
+	When I press the "Eventos" button
+	And Navigates to "Eventos" page
+	And The "Eventos" page is displayed
+	Then Press the "Eventos Pasados" button
+	And I should see the "<EventosPasados>" content
+	Examples:
+    | EventosPasados    |			  
+   	| EVENTOS PASADOS   |
 
 
 Scenario Outline: Ver detalle Evento
-	Given I press the "Eventos" button
+	When I press the "Eventos" button
 	And Navigates to "Eventos" page
-	When The "Eventos" page is displayed
+	And The "Eventos" page is displayed
 	And Press the "Detalles" button of card "<evento>"
 	Then I should see the "<description>" event
-	Then I should see the "<modalidad>" event
-	Then I should see the "<lugar>" event
+	And I should see the "<modalidad>" event
+	And I should see the "<lugar>" event
 
 	Examples:
     | evento               	 | description    					| modalidad |lugar		|
@@ -54,19 +64,19 @@ Scenario Outline: Ver detalle Evento
 
 @ParticiparEvento
 Scenario: Participar en evento
-	Given I press the "Eventos" button
+	When I press the "Eventos" button
 	And Navigates to "Eventos" page
 	And The "Eventos" page is displayed
-	When Press the "participar" button of card "Evento Automatizado2" 
-	Then The "DejarParticipar" button of card "Evento Automatizado2" is show
+	Then Press the "participar" button of card "Evento Automatizado2" 
+	And The "DejarParticipar" button of card "Evento Automatizado2" is show
 
 @EditarEvento
 Scenario: Editar evento
-	Given I press the "Eventos" button
+	When I press the "Eventos" button
 	And Navigates to "Eventos" page
 	And The "Eventos" page is displayed
 	And Press the "Detalles" button of card "Evento Automatizado2" 
-	When Press the "Editar" button
+	Then Press the "Editar" button
 	And The "Editar evento" form is displayed
 	And I enter the required event fields as show below
 	|Nombre Evento: 	| Evento Automatizado editado |
@@ -76,7 +86,7 @@ Scenario: Editar evento
     |Fecha: 	        | 11/07/2023        |
     |Categoria: 	    | Medio ambiente      |
     |Proyecto:  		| ProyectoPrueba            |
-	Then Press the "Guardar Cambios" button
+	And Press the "Guardar Cambios" button
 	And I should see the "<description>" event
 	And I should see the "<lugar>" event
 	And I should see the "<categoria>" event
@@ -86,8 +96,13 @@ Scenario: Editar evento
 
 @EliminarEvento
 Scenario: Eliminar evento
-	Given I press the "Eventos" button
+	When I press the "Eventos" button
 	And Navigates to "Eventos" page
 	And The "Eventos" page is displayed
-	When Press the "Eliminar" button of card "Evento Automatizado editado" 
-	Then Press the "Confirmar" button
+	Then Press the "Eliminar" button of card "Evento Automatizado editado" 
+	And Press the "Confirmar" button
+
+
+
+
+	

@@ -44,7 +44,9 @@ When(/^I enter the required event fields as show below$/) do |table|
 	end
   end
 end
-
+When(/^I should see the "([^"]*)" content$/) do |content|
+    expect(page).to have_content(content)
+end
 
 When(/^Press the "([^"]*)" button of card "([^"]*)"$/) do |buttonName, eventName|
     action=buttonName +"_"+ eventName
@@ -85,11 +87,17 @@ When(/^Press the "([^"]*)" button$/) do |buttonName|
         css=' #ModalFormEditEvento > div > form > div.CamposBotones > button.MuiButtonBase-root.MuiButton-root.MuiButton-text.botonActualizar'
         find(:css, css).click
         sleep(1)
+    elsif (buttonName == "EVENTOS PASADOS")
+        css=' #root > div:nth-child(2) > div:nth-child(2) > div > div.container1.container > div:nth-child(1) > div.Menu-Bar-Evento > div.header-botones-eventos > button:nth-child(2)'
+        find(:css, css).click
+        sleep(1)
     
     end
   
 end
 
+
 When(/^I should see the "([^"]*)" event$/) do |content|
     expect(page).to have_content(content)
 end
+
