@@ -49,6 +49,28 @@ When(/^I press the "([^"]*)" project button$/) do |buttonName|
 end
 
 
+
+When(/^I click on the button "([^"]*)" of the project "([^"]*)"$/) do |button_name, project_name|
+    cont = 0
+    size = page.all(:css, '.MuiPaper-root MuiCard-root jss573 MuiPaper-elevation1 MuiPaper-rounded').size
+    while cont < size
+    if page.all(:css, '.MuiPaper-root MuiCard-root jss573 MuiPaper-elevation1 MuiPaper-rounded')[cont].text.include? project_name
+        page.all(:css, '.MuiPaper-root MuiCard-root jss573 MuiPaper-elevation1 MuiPaper-rounded')[cont].click_button(button_name)
+        sleep(1)
+        cont = size
+        else
+        cont = cont + 1
+        end
+    end
+end
+
+Then('I should see the alert {string} on the screen') do |string|
+    # xpath = '//*[@id="root"]/div[2]/div[1]/div/div[2]/div/div[103]/div[2]/div[4]/div/div/div[2]'
+    expect(page).to have_content('Ver detalles')
+end
+
+#root > div:nth-child(2) > div:nth-child(2) > div > div.MuiBox-root.jss571 > div > div:nth-child(103) > div.MuiBox-root.jss784 > div:nth-child(4) > div > div > div.MuiAlert-message
+
 Then('I should not see the project {string} in the list of projects') do |string|
     sleep 2
     expect(page).not_to have_content(string)

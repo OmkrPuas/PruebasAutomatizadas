@@ -7,7 +7,7 @@ Background: Loged As a volunteer User
 	And I press the "Iniciar Sesión" button
 	And I enter my "leader" user and password
 	And I press the Login button
-    And I press the account icon
+  And I press the account icon
 
 Scenario: See the events of a volunteer users 
   When I press the "Tus logros" button on the table

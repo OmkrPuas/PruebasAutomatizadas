@@ -8,7 +8,6 @@ Background: Login as voluntario
 	And I press the "Iniciar Sesión" button
 	And I enter my "volunteer" user and password
 	When I press the Login button
-    Then The loged home page is displayed
 
 Scenario: See the the active projects list
     When I press the "Proyectos" button 
@@ -20,3 +19,10 @@ Scenario: See the the past projects list
     When I press the "Proyectos" button 
     And I press the MEDIO AMBIENTE button
     Then I should be able to see the past projects list
+
+
+Scenario: Participate in a project as volunteer
+    When I press the "Proyectos" button
+    And I press the MEDIO AMBIENTE button
+    When I click on the button "Unirme" of the project "Prueba 1 - 6"
+    Then I should see the alert "Participacion exitosa" on the screen

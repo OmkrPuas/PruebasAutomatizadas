@@ -8,7 +8,7 @@ Background: Login as lider
 	And I press the "Iniciar Sesión" button
 	And I enter my "leader" user and password
 	When I press the Login button
-    Then The loged home page is displayed
+
 
 Scenario: See the the active projects list
     When I press the "Proyectos" button 
@@ -22,5 +22,8 @@ Scenario: See the the past projects list
     Then I should be able to see the active projects list
 
 
-Scenario: Participate in a project
-    # When I press the 
+Scenario: Participate in a project as leader
+    When I press the "Proyectos" button
+    And I press the MEDIO AMBIENTE button
+    When I click on the button "Unirme" of the project "Prueba 1 - 6"
+    Then I should see the alert "Participacion exitosa" on the screen

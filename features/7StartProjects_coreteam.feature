@@ -8,7 +8,7 @@ Background: Login as coreteam
 	And I press the "Iniciar Sesión" button
 	And I enter my "coreteam" user and password
 	When I press the Login button
-    Then The loged home page is displayed
+ 
 
 Scenario: Show the project form
     When I press the "Proyectos" button 
@@ -90,3 +90,9 @@ Scenario: Create a project with a end date earlier than the actual date and the 
     And I press the "CREAR PROYECTO" project button
     Then I press the "MEDIO AMBIENTE" project button
     And I should not see the project "Prueba 6 - 6" in the list of projects
+
+Scenario: Participate in a project as coreteam
+    When I press the "Proyectos" button
+    And I press the MEDIO AMBIENTE button
+    When I click on the button "Unirme" of the project "Prueba 1 - 6"
+    Then I should see the alert "Participacion exitosa" on the screen
