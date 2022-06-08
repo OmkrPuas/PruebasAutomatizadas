@@ -37,4 +37,4 @@ Si se desea ejecutar un archivo en concreto se utilizar el siguiente comando, ut
 cucumber features/Nombre_de_feature
 ```
 ### Resultados
-Dentro de este repositorio, hay 48 escenarios probados en total, de los cuales fallan 4. 
+Dentro de la automatizacion, existen 49 escenarios probados en total, de los cuales fallan 5. 
