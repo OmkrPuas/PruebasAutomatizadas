@@ -25,4 +25,4 @@ Para la ejecucion de los test se usa el siguiente comando, teniendo que modifica
 ```
 cucumber features/7StartAccountC.feature --publish-quiet
 ```
-Dentro de este repositorio, hay 60 escenarios probados en total, de los cuales 11 no estan completos, y 9 escenarios fallan. 
+Dentro de este repositorio, hay 48 escenarios probados en total, de los cuales fallan 4. 
