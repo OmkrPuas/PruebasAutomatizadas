@@ -1,11 +1,19 @@
-
+require './features/pages/EventsPage.rb'
+$events = -1
 $currentevent
+$request = -1
+
+When(/^I should see the "([^"]*)" content$/) do |content|
+    $events = EventsPage.new(page)
+    request = $events.exist_the_content(content)
+    expect(request).to be true
+end
 
 When(/^I press the Crear Evento button$/) do 
-     xpath ='//*[@id="root"]/div[2]/div[1]/div/div[1]/div[1]/div[3]/div[2]/button[1]'
-     find(:xpath, xpath).click
+    $events = EventsPage.new(page)
+    request = $events.push_CrearEvento()
 end
-Then(/^The "([^"]*)" form is displayed$/) do |optionform|
+Then(/^The "([^"]*)" form shows the tittle form$/) do |optionform|
     puts optionform
     if(optionform == "Crear Evento")
         find(:xpath, '//*[@id="ModalFormCrearEvento"]/div/div/strong', :text => optionform)
@@ -44,9 +52,7 @@ When(/^I enter the required event fields as show below$/) do |table|
 	end
   end
 end
-When(/^I should see the "([^"]*)" content$/) do |content|
-    expect(page).to have_content(content)
-end
+
 
 When(/^Press the "([^"]*)" button of card "([^"]*)"$/) do |buttonName, eventName|
     action=buttonName +"_"+ eventName
